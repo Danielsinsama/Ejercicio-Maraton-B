@@ -1,6 +1,9 @@
 #include <iostream>
+#include "hola.txt"
 using namespace std;
+
 main() 
 {
-	cout<<"Hellow World";
+	cout<<"Hello World";
+	
 }
