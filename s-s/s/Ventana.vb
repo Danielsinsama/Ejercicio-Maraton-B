@@ -1,19 +1,22 @@
 ﻿Public Class Ventana
-    Private Sub Label1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Ventana_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim posX As Integer
         Dim posY As Integer
 
         Dim mat(5, 5) As Label
-        For i = 0 To 5  'VA DEL CERO AL CINCO-> ES DECIR LONGITUD DE 6
+        'predecir longitud
+        container.Location = New System.Drawing.Point(20, 20)
+        container.Size = New Size(18 * 5 + 40, 19 * 5 + 40)
+        'predecir longitud frm
+        Size = New Size(18 * 5 + 160, 19 * 5 + 160)
+
+
+        For i = 0 To 4  'VA DEL CERO AL CINCO-> ES DECIR LONGITUD DE 6
             If i = 0 Then
                 posX = 20 + container.Location.X
             End If
 
-            For j = 0 To 5
+            For j = 0 To 4
                 If j = 0 Then
                     posY = 20 + container.Location.Y
                 Else
@@ -35,11 +38,4 @@
         container.Controls.Add(ele)
     End Sub
 
-    Private Sub Label1_Click_1(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub container_Paint(sender As Object, e As PaintEventArgs) Handles container.Paint
-
-    End Sub
 End Class

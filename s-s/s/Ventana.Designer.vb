@@ -27,22 +27,22 @@ Partial Class Ventana
         '
         'container
         '
-        Me.container.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.container.Location = New System.Drawing.Point(87, 26)
+        Me.container.Location = New System.Drawing.Point(12, 12)
         Me.container.Name = "container"
-        Me.container.Size = New System.Drawing.Size(476, 256)
-        Me.container.TabIndex = 5
+        Me.container.Size = New System.Drawing.Size(200, 100)
+        Me.container.TabIndex = 0
         '
         'Ventana
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(713, 513)
+        Me.ClientSize = New System.Drawing.Size(381, 284)
         Me.Controls.Add(Me.container)
         Me.Name = "Ventana"
-        Me.Text = "Form1"
+        Me.Text = "Generador de sopa de letras"
         Me.ResumeLayout(False)
 
     End Sub
+
     Friend WithEvents container As Panel
 End Class
