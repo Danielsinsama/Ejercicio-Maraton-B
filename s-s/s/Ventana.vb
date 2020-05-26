@@ -2,13 +2,11 @@
 
 Public Class Ventana
     Private Sub Ventana_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        Dim t As New Tablero
-        t.numFilas = 12
-        t.numColumnas = 11
-
         Dim posX As Integer
         Dim posY As Integer
+
+        Dim t As Tablero
+        t = New Tablero(14, 14)
 
         Dim mat(t.numFilas, t.numColumnas) As Label
 
@@ -42,7 +40,7 @@ Public Class Ventana
         ele.BackColor = Color.White
         ele.BorderStyle = BorderStyle.FixedSingle
         ele.Margin = New Padding(0, 0, 0, 0)
-        ele.Text = "A"
+        ele.Text = "D"
         ele.Size = New Size(18, 19) 'PUEDE ESTAR MAL, CAMBIAR SI LO ESTÁ
         ele.Location = New System.Drawing.Point(x, y)
         container.Controls.Add(ele)
