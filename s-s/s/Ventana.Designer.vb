@@ -22,6 +22,7 @@ Partial Class Ventana
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventana))
         Me.container = New System.Windows.Forms.Panel()
         Me.SuspendLayout()
         '
@@ -38,6 +39,7 @@ Partial Class Ventana
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(381, 284)
         Me.Controls.Add(Me.container)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Ventana"
         Me.Text = "Generador de sopa de letras"
         Me.ResumeLayout(False)
