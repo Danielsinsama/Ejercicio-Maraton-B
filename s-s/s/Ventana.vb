@@ -1,12 +1,14 @@
 ﻿Imports Logica
 
 Public Class Ventana
+    Dim letras As String = "QWERTYUIOPASDFGHJKLÑZCVBNM"
+
+    Dim t As Tablero
     Private Sub Ventana_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        t = New Tablero(14, 14)
         Dim posX As Integer
         Dim posY As Integer
-
-        Dim t As Tablero
-        t = New Tablero(14, 14)
 
         Dim mat(t.numFilas, t.numColumnas) As Label
 
@@ -28,6 +30,7 @@ Public Class Ventana
                     posY += 19
                 End If
                 fijarLbl(mat(i, j), posX, posY)
+                'fijarTextoLbl(mat(i, j))
             Next
             posX += 18
         Next
@@ -35,12 +38,14 @@ Public Class Ventana
 
         MinimumSize = New Size(Size.Width, Size.Height)
     End Sub
+
     Private Sub fijarLbl(ele As Label, x As Integer, y As Integer)
         ele = New Label()
+        Dim n As Integer = Rnd() * 25
         ele.BackColor = Color.White
         ele.BorderStyle = BorderStyle.FixedSingle
+        ele.Text = letras(n)
         ele.Margin = New Padding(0, 0, 0, 0)
-        ele.Text = "D"
         ele.Size = New Size(18, 19) 'PUEDE ESTAR MAL, CAMBIAR SI LO ESTÁ
         ele.Location = New System.Drawing.Point(x, y)
         container.Controls.Add(ele)
