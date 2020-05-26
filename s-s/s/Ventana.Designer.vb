@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class Ventana
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -28,18 +28,18 @@ Partial Class Form1
         'container
         '
         Me.container.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.container.Location = New System.Drawing.Point(12, 10)
+        Me.container.Location = New System.Drawing.Point(87, 26)
         Me.container.Name = "container"
-        Me.container.Size = New System.Drawing.Size(687, 484)
+        Me.container.Size = New System.Drawing.Size(476, 256)
         Me.container.TabIndex = 5
         '
-        'Form1
+        'Ventana
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(711, 506)
+        Me.ClientSize = New System.Drawing.Size(713, 513)
         Me.Controls.Add(Me.container)
-        Me.Name = "Form1"
+        Me.Name = "Ventana"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
 
