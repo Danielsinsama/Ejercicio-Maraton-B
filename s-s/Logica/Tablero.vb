@@ -75,8 +75,8 @@ Public Class Tablero
     End Function
     Public Sub escribirH(s As String)
         Dim posX, posY As Integer
-        posY = numeroAleatorio(numColumnas)
-        posX = numeroAleatorio(numFilas - s.Length)
+        posY = numeroAleatorio(0, numColumnas - 1)
+        posX = numeroAleatorio(0, numFilas - s.Length)
         For i = 0 To s.Length - 1
             matriz(posX + i, posY).Text = s(i).ToString()
             matriz(posX + i, posY).BackColor = Color.Aqua
@@ -84,17 +84,17 @@ Public Class Tablero
     End Sub
     Public Sub escribirHI(s As String)
         Dim posX, posY As Integer
-        posY = numeroAleatorio(numColumnas)
-        posX = numeroAleatorio(s.Length, (numFilas - s.Length - 1))
+        posY = numeroAleatorio(0, numColumnas - 1)
+        posX = numeroAleatorio(s.Length - 1, (numFilas - 1))
         For i = 0 To s.Length - 1
             matriz(posX - i, posY).Text = s(i).ToString()
             matriz(posX - i, posY).BackColor = Color.Aqua
         Next
     End Sub
-    Public Sub escribirV(s As String)
+    Public Sub escribirV(s As String) 'para MODIFICAR
         Dim posX, posY As Integer
-        posX = numeroAleatorio(numFilas)
-        posY = numeroAleatorio(numColumnas - s.Length)
+        posX = numeroAleatorio(0, numFilas - 1)
+        posY = numeroAleatorio(0, numColumnas - s.Length)
         For i = 0 To s.Length - 1
             matriz(posX, posY + i).Text = s(i).ToString()
             matriz(posX, posY + i).BackColor = Color.Aqua
@@ -102,11 +102,49 @@ Public Class Tablero
     End Sub
     Public Sub escribirVI(s As String)
         Dim posX, posY As Integer
-        posX = numeroAleatorio(numFilas)
+        posX = numeroAleatorio(0, numFilas - 1)
         posY = numeroAleatorio(s.Length, numColumnas - s.Length - 1)
         For i = 0 To s.Length - 1
             matriz(posX, posY - i).Text = s(i).ToString()
             matriz(posX, posY - i).BackColor = Color.Aqua
         Next
     End Sub
+    Public Sub escribirDD(s As String)
+        Dim posX, posY As Integer
+        posX = numeroAleatorio(0, numFilas - s.Length)
+        posY = numeroAleatorio(0, numColumnas - s.Length)
+        For i = 0 To s.Length - 1
+            matriz(posX + i, posY + i).Text = s(i).ToString()
+            matriz(posX + i, posY + i).BackColor = Color.Aqua
+        Next
+    End Sub
+
+    Public Sub escribirDDI(s As String)
+        Dim posX, posY As Integer
+        posX = numeroAleatorio(s.Length - 1, numFilas - 1)
+        posY = numeroAleatorio(s.Length - 1, numColumnas - 1)
+        For i = 0 To s.Length - 1
+            matriz(posX - i, posY - i).Text = s(i).ToString()
+            matriz(posX - i, posY - i).BackColor = Color.Aqua
+        Next
+    End Sub
+    Public Sub escribirDI(s As String)
+        Dim posX, posY As Integer
+        posX = numeroAleatorio(s.Length - 1, numFilas - 1)
+        posY = numeroAleatorio(0, numColumnas - s.Length)
+        For i = 0 To s.Length - 1
+            matriz(posX - i, posY + i).Text = s(i).ToString()
+            matriz(posX - i, posY + i).BackColor = Color.Aqua
+        Next
+    End Sub
+    Public Sub escribirDII(s As String)
+        Dim posX, posY As Integer
+        posX = numeroAleatorio(0, numFilas - s.Length)
+        posY = numeroAleatorio(s.Length - 1, numColumnas - 1)
+        For i = 0 To s.Length - 1
+            matriz(posX + i, posY - i).Text = s(i).ToString()
+            matriz(posX + i, posY - i).BackColor = Color.Aqua
+        Next
+    End Sub
+
 End Class

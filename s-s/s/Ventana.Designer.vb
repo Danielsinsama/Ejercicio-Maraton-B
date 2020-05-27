@@ -30,7 +30,7 @@ Partial Class Ventana
         '
         Me.container.Location = New System.Drawing.Point(12, 12)
         Me.container.Name = "container"
-        Me.container.Size = New System.Drawing.Size(200, 100)
+        Me.container.Size = New System.Drawing.Size(357, 135)
         Me.container.TabIndex = 0
         '
         'Ventana

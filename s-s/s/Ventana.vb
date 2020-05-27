@@ -7,20 +7,15 @@ Public Class Ventana
         'predecir longitud
         container.Location = New System.Drawing.Point(20, 20)
 
-        Dim t = New Tablero(11, 11, container)
+        Dim t = New Tablero(10, 10, container)
         container.Size = New Size(18 * t.numFilas + 40, 19 * t.numColumnas + 40)
         'predecir longitud frm
         Size = New Size(18 * t.numFilas + 160, 19 * t.numColumnas + 160)
         MaximumSize = New Size(Size.Width, Size.Height)
         MinimumSize = New Size(Size.Width, Size.Height)
-        t.escribirHI(palabras(0))
+        t.escribirDII("NAYELHY")
 
-        t.escribirHI(palabras(4))
-        t.escribirHI(palabras(3))
 
     End Sub
-
-
-
 
 End Class

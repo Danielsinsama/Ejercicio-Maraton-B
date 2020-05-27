@@ -12,14 +12,9 @@ Public Module Basi
         Dim n As Integer = Rnd() * 25
         Return letras(n)
     End Function
-    Public Function numeroAleatorio(limi As Integer) As Integer
+    Public Function numeroAleatorio(li As Integer, ls As Integer) As Integer
         Randomize()
-        Dim n As Integer = Rnd() * limi 'de cero a limi
-        Return n
-    End Function
-    Public Function numeroAleatorio(limi As Integer, ad As Integer) As Integer
-        Randomize()
-        Dim n As Integer = Rnd() * limi + ad 'de cero a limi
+        Dim n As Integer = Int((ls - li + 1) * Rnd() + li)
         Return n
     End Function
     Public Function mayorLongitud()
