@@ -1,15 +1,17 @@
-﻿Imports System.Reflection.Emit
-
+﻿Imports System.Drawing
+Imports System.Reflection.Emit
+Imports System.Windows.Forms
+Imports Label = System.Windows.Forms.Label
+Imports Basi
 Public Class Tablero
     Private _numFilas As Integer
     Private _numColumnas As Integer
-    Private _matriz(_numFilas, _numColumnas) As Label
-    Public Sub New(ByVal nf As Integer, ByVal nc As Integer)
+    Private _matriz(,) As Label
+
+    Public Sub New(ByVal nf As Integer, ByVal nc As Integer, ByVal cont As Panel)
         _numColumnas = nc
         _numFilas = nf
-        '_matriz(nf, nc) = New Label
-
-
+        _matriz = obtenerMatriz(nf, nc, cont)
     End Sub
     Public Property matriz() As Label(,)
         Get

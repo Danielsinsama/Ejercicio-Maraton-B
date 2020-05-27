@@ -41,7 +41,7 @@ Partial Class Ventana
         Me.Controls.Add(Me.container)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Ventana"
-        Me.Text = "Generador de sopa de letras"
+        Me.Text = "Genera sopas"
         Me.ResumeLayout(False)
 
     End Sub

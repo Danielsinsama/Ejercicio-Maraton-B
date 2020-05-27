@@ -116,6 +116,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Basi\Basi.vbproj">
+      <Project>{81f35289-e866-434e-ad71-1b8f84397a14}</Project>
+      <Name>Basi</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logica\Logica.vbproj">
       <Project>{183ee085-0de9-48b8-9633-0cd415cd9743}</Project>
       <Name>Logica</Name>
