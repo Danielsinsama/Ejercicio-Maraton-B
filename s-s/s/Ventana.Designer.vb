@@ -40,6 +40,8 @@ Partial Class Ventana
         Me.ClientSize = New System.Drawing.Size(381, 284)
         Me.Controls.Add(Me.container)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Ventana"
         Me.Text = "Genera sopas"
         Me.ResumeLayout(False)
