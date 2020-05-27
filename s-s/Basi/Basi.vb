@@ -17,6 +17,11 @@ Public Module Basi
         Dim n As Integer = Rnd() * limi 'de cero a limi
         Return n
     End Function
+    Public Function numeroAleatorio(limi As Integer, ad As Integer) As Integer
+        Randomize()
+        Dim n As Integer = Rnd() * limi + ad 'de cero a limi
+        Return n
+    End Function
     Public Function mayorLongitud()
         Dim mayor As Integer
         For i = 0 To palabras.Length - 1

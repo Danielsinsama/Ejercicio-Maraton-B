@@ -13,10 +13,10 @@ Public Class Ventana
         Size = New Size(18 * t.numFilas + 160, 19 * t.numColumnas + 160)
         MaximumSize = New Size(Size.Width, Size.Height)
         MinimumSize = New Size(Size.Width, Size.Height)
-        t.escribirH(palabras(0))
+        t.escribirHI(palabras(0))
 
-        t.escribirH(palabras(4))
-        t.escribirH(palabras(3))
+        t.escribirHI(palabras(4))
+        t.escribirHI(palabras(3))
 
     End Sub
 

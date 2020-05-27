@@ -75,20 +75,38 @@ Public Class Tablero
     End Function
     Public Sub escribirH(s As String)
         Dim posX, posY As Integer
-        posY = numeroAleatorio(numColumnas - 1)
+        posY = numeroAleatorio(numColumnas)
         posX = numeroAleatorio(numFilas - s.Length)
         For i = 0 To s.Length - 1
             matriz(posX + i, posY).Text = s(i).ToString()
             matriz(posX + i, posY).BackColor = Color.Aqua
         Next
     End Sub
+    Public Sub escribirHI(s As String)
+        Dim posX, posY As Integer
+        posY = numeroAleatorio(numColumnas)
+        posX = numeroAleatorio(s.Length, (numFilas - s.Length - 1))
+        For i = 0 To s.Length - 1
+            matriz(posX - i, posY).Text = s(i).ToString()
+            matriz(posX - i, posY).BackColor = Color.Aqua
+        Next
+    End Sub
     Public Sub escribirV(s As String)
         Dim posX, posY As Integer
-        posX = numeroAleatorio(numFilas - 1)
+        posX = numeroAleatorio(numFilas)
         posY = numeroAleatorio(numColumnas - s.Length)
         For i = 0 To s.Length - 1
             matriz(posX, posY + i).Text = s(i).ToString()
             matriz(posX, posY + i).BackColor = Color.Aqua
+        Next
+    End Sub
+    Public Sub escribirVI(s As String)
+        Dim posX, posY As Integer
+        posX = numeroAleatorio(numFilas)
+        posY = numeroAleatorio(s.Length, numColumnas - s.Length - 1)
+        For i = 0 To s.Length - 1
+            matriz(posX, posY - i).Text = s(i).ToString()
+            matriz(posX, posY - i).BackColor = Color.Aqua
         Next
     End Sub
 End Class
