@@ -38,4 +38,57 @@ Public Class Tablero
             _numColumnas = v
         End Set
     End Property
+    Private Function obtenerLbl(ele As Label, x As Integer, y As Integer, container As Panel, cadena As String) As Label
+        ele = New Label()
+        ele.BackColor = Color.White
+        ele.BorderStyle = BorderStyle.FixedSingle
+        ele.Text = cadena
+        ele.Margin = New Padding(0, 0, 0, 0)
+        ele.Size = New Size(18, 19) 'PUEDE ESTAR MAL, CAMBIAR SI LO ESTÁ
+        ele.Location = New System.Drawing.Point(x, y)
+
+        Return ele
+    End Function
+
+    Public Function obtenerMatriz(filas As Integer, columnas As Integer, container As Panel) As Label(,)
+        Dim eme(filas, columnas) As Label
+        Dim posX As Integer
+        Dim posY As Integer
+        For i = 0 To filas - 1
+            'VA DEL CERO AL CINCO-> ES DECIR LONGITUD DE 6
+            If i = 0 Then
+                posX = 20 + container.Location.X
+            End If
+            For j = 0 To columnas - 1
+                If j = 0 Then
+                    posY = 20 + container.Location.Y
+                Else
+                    posY += 19
+                End If
+                eme(i, j) = obtenerLbl(eme(i, j), posX, posY, container, cadenaAleatoria)
+                container.Controls.Add(eme(i, j))
+            Next
+            posX += 18
+        Next
+
+        Return eme
+    End Function
+    Public Sub escribirH(s As String)
+        Dim posF, posC As Integer
+        posF = numeroAleatorio(numFilas)
+        posC = numeroAleatorio(numColumnas - s.Length)
+        For i = 0 To s.Length - 1
+            matriz(i + posF, posC).Text = s(i).ToString()
+            matriz(i + posF, posC).BackColor = Color.Aqua
+        Next
+    End Sub
+    Public Sub escribirV(s As String)
+        Dim posF, posC As Integer
+        posF = numeroAleatorio(numFilas - s.Length)
+        posC = numeroAleatorio(numColumnas)
+        For i = 0 To s.Length - 1
+            matriz(posF, posC + i).Text = s(i).ToString()
+            matriz(posF, posC + i).BackColor = Color.Aqua
+        Next
+    End Sub
 End Class
