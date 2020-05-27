@@ -54,12 +54,12 @@ Public Class Tablero
         Dim eme(filas, columnas) As Label
         Dim posX As Integer
         Dim posY As Integer
-        For i = 0 To filas - 1
+        For i = 0 To filas
             'VA DEL CERO AL CINCO-> ES DECIR LONGITUD DE 6
             If i = 0 Then
                 posX = 20 + container.Location.X
             End If
-            For j = 0 To columnas - 1
+            For j = 0 To columnas
                 If j = 0 Then
                     posY = 20 + container.Location.Y
                 Else
@@ -74,21 +74,21 @@ Public Class Tablero
         Return eme
     End Function
     Public Sub escribirH(s As String)
-        Dim posF, posC As Integer
-        posF = numeroAleatorio(numFilas)
-        posC = numeroAleatorio(numColumnas - s.Length)
+        Dim posX, posY As Integer
+        posY = numeroAleatorio(numColumnas - 1)
+        posX = numeroAleatorio(numFilas - s.Length)
         For i = 0 To s.Length - 1
-            matriz(i + posF, posC).Text = s(i).ToString()
-            matriz(i + posF, posC).BackColor = Color.Aqua
+            matriz(posX + i, posY).Text = s(i).ToString()
+            matriz(posX + i, posY).BackColor = Color.Aqua
         Next
     End Sub
     Public Sub escribirV(s As String)
-        Dim posF, posC As Integer
-        posF = numeroAleatorio(numFilas - s.Length)
-        posC = numeroAleatorio(numColumnas)
+        Dim posX, posY As Integer
+        posX = numeroAleatorio(numFilas - 1)
+        posY = numeroAleatorio(numColumnas - s.Length)
         For i = 0 To s.Length - 1
-            matriz(posF, posC + i).Text = s(i).ToString()
-            matriz(posF, posC + i).BackColor = Color.Aqua
+            matriz(posX, posY + i).Text = s(i).ToString()
+            matriz(posX, posY + i).BackColor = Color.Aqua
         Next
     End Sub
 End Class
