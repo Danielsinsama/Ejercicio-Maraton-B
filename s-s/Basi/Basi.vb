@@ -6,7 +6,7 @@ Imports Label = System.Windows.Forms.Label
 Public Module Basi
 
     Public letras As String = "QWERTYUIOPASDFGHJKLÑZCVBNM"
-    Public palabras As String() = {"GEOMETRIA", "FISICA", "RM", "RAZONAMIENTO", "ALGEBRA", "GEOMETRIA"}
+    Public palabras As String() = {"GEOMETRIA", "FISICA", "RAZONAMIENTO", "ALGEBRA", "TRIGONOMETRIA"}
     Public Function cadenaAleatoria() As String
         Randomize()
         Dim n As Integer = Rnd() * 25

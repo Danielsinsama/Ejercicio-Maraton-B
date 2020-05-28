@@ -43,6 +43,7 @@ Partial Class Ventana
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Ventana"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Genera sopas"
         Me.ResumeLayout(False)
 

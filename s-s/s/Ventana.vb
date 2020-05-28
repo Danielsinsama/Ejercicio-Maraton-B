@@ -9,15 +9,16 @@ Public Class Ventana
 
         Dim t = New Tablero(mayorLongitud() * 2, mayorLongitud() * 2, container)
 
+        ' Dim t = New Tablero(10, 10, container)
 
         container.Size = New Size(18 * t.numFilas + 40, 19 * t.numColumnas + 40)
         'predecir longitud frm
         Size = New Size(18 * t.numFilas + 160, 19 * t.numColumnas + 160)
         MaximumSize = New Size(Size.Width, Size.Height)
         MinimumSize = New Size(Size.Width, Size.Height)
-        t.escribirDI("DIEGO")
-
-
+        t.escribirDI(palabras(0))
+        t.escribirHI(palabras(1))
+        t.escribirV(palabras(2))
     End Sub
 
 End Class

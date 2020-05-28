@@ -73,12 +73,13 @@ Public Class Tablero
 
         Return eme
     End Function
+
     Public Sub escribirH(s As String)
         Dim posX, posY As Integer
         posY = numeroAleatorio(0, numFilas - 1)
         posX = numeroAleatorio(0, numColumnas - s.Length)
         For i = 0 To s.Length - 1
-            insertar(s(i), posX + i, posY - i)
+            matriz(posX + i, posY) = insertar(s(i), posX + i, posY)
         Next
     End Sub
     Public Sub escribirHI(s As String)
@@ -86,7 +87,7 @@ Public Class Tablero
         posY = numeroAleatorio(0, numFilas - 1)
         posX = numeroAleatorio(s.Length - 1, (numColumnas - 1))
         For i = 0 To s.Length - 1
-            insertar(s(i), posX - i, posY)
+            matriz(posX-i,posY)=insertar(s(i), posX - i, posY)
         Next
     End Sub
     Public Sub escribirV(s As String) 'para MODIFICAR
@@ -94,7 +95,7 @@ Public Class Tablero
         posX = numeroAleatorio(0, numColumnas - 1)
         posY = numeroAleatorio(0, numFilas - s.Length)
         For i = 0 To s.Length - 1
-            insertar(s(i), posX, posY + i)
+            matriz(posX, posY + i) = insertar(s(i), posX, posY + i)
         Next
     End Sub
     Public Sub escribirVI(s As String)
@@ -102,7 +103,7 @@ Public Class Tablero
         posX = numeroAleatorio(0, numColumnas - 1)
         posY = numeroAleatorio(s.Length, numFilas - s.Length - 1)
         For i = 0 To s.Length - 1
-            insertar(s(i), posX, posY - i)
+            matriz(posX, posY - i) = insertar(s(i), posX, posY - i)
         Next
     End Sub
     Public Sub escribirDD(s As String)
@@ -110,7 +111,7 @@ Public Class Tablero
         posX = numeroAleatorio(0, numColumnas - s.Length)
         posY = numeroAleatorio(0, numFilas - s.Length)
         For i = 0 To s.Length - 1
-            insertar(s(i), posX + i, posY + i)
+            matriz(posX + i, posY + i) = insertar(s(i), posX + i, posY + i)
         Next
     End Sub
 
@@ -119,7 +120,7 @@ Public Class Tablero
         posX = numeroAleatorio(s.Length - 1, numColumnas - 1)
         posY = numeroAleatorio(s.Length - 1, numFilas - 1)
         For i = 0 To s.Length - 1
-            insertar(s(i), posX - i, posY - i)
+            matriz(posX - i, posY - i) = insertar(s(i), posX - i, posY - i)
         Next
     End Sub
     Public Sub escribirDI(s As String)
@@ -127,7 +128,7 @@ Public Class Tablero
         posX = numeroAleatorio(s.Length - 1, numColumnas - 1)
         posY = numeroAleatorio(0, numFilas - s.Length)
         For i = 0 To s.Length - 1
-            insertar(s(i), posX - i, posY + i)
+            matriz(posX - i, posY + i) = insertar(s(i), posX - i, posY + i)
         Next
     End Sub
     Public Sub escribirDII(s As String)
@@ -135,11 +136,17 @@ Public Class Tablero
         posX = numeroAleatorio(0, numColumnas - s.Length)
         posY = numeroAleatorio(s.Length - 1, numFilas - 1)
         For i = 0 To s.Length - 1
-            insertar(s(i), posX + i, posY - i)
+            matriz(posX + i, posY - i) = insertar(s(i), posX + i, posY - i)
         Next
     End Sub
-    Public Sub insertar(letrita As String, x As Integer, y As Integer) ' AL LLAMARLO, SE ESPECIFICARÁ :letrita es el s(i)
-        matriz(x, y).Text = letrita.ToString()
-        matriz(x, y).BackColor = Color.Aqua
-    End Sub
+    Public Function insertar(letrita As String, x As Integer, y As Integer) As Label ' AL LLAMARLO, SE ESPECIFICARÁ :letrita es el s(i)
+        Dim L As Label = matriz(x, y)
+        If matriz(x, y).BackColor = Color.Aqua Then
+            L = Nothing
+        Else
+            L.Text = letrita.ToString()
+            L.BackColor = Color.Aqua
+        End If
+        Return L
+    End Function
 End Class
