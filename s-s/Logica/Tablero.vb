@@ -75,76 +75,71 @@ Public Class Tablero
     End Function
     Public Sub escribirH(s As String)
         Dim posX, posY As Integer
-        posY = numeroAleatorio(0, numColumnas - 1)
-        posX = numeroAleatorio(0, numFilas - s.Length)
+        posY = numeroAleatorio(0, numFilas - 1)
+        posX = numeroAleatorio(0, numColumnas - s.Length)
         For i = 0 To s.Length - 1
-            matriz(posX + i, posY).Text = s(i).ToString()
-            matriz(posX + i, posY).BackColor = Color.Aqua
+            insertar(s(i), posX + i, posY - i)
         Next
     End Sub
     Public Sub escribirHI(s As String)
         Dim posX, posY As Integer
-        posY = numeroAleatorio(0, numColumnas - 1)
-        posX = numeroAleatorio(s.Length - 1, (numFilas - 1))
+        posY = numeroAleatorio(0, numFilas - 1)
+        posX = numeroAleatorio(s.Length - 1, (numColumnas - 1))
         For i = 0 To s.Length - 1
-            matriz(posX - i, posY).Text = s(i).ToString()
-            matriz(posX - i, posY).BackColor = Color.Aqua
+            insertar(s(i), posX - i, posY)
         Next
     End Sub
     Public Sub escribirV(s As String) 'para MODIFICAR
         Dim posX, posY As Integer
-        posX = numeroAleatorio(0, numFilas - 1)
-        posY = numeroAleatorio(0, numColumnas - s.Length)
+        posX = numeroAleatorio(0, numColumnas - 1)
+        posY = numeroAleatorio(0, numFilas - s.Length)
         For i = 0 To s.Length - 1
-            matriz(posX, posY + i).Text = s(i).ToString()
-            matriz(posX, posY + i).BackColor = Color.Aqua
+            insertar(s(i), posX, posY + i)
         Next
     End Sub
     Public Sub escribirVI(s As String)
         Dim posX, posY As Integer
-        posX = numeroAleatorio(0, numFilas - 1)
-        posY = numeroAleatorio(s.Length, numColumnas - s.Length - 1)
+        posX = numeroAleatorio(0, numColumnas - 1)
+        posY = numeroAleatorio(s.Length, numFilas - s.Length - 1)
         For i = 0 To s.Length - 1
-            matriz(posX, posY - i).Text = s(i).ToString()
-            matriz(posX, posY - i).BackColor = Color.Aqua
+            insertar(s(i), posX, posY - i)
         Next
     End Sub
     Public Sub escribirDD(s As String)
         Dim posX, posY As Integer
-        posX = numeroAleatorio(0, numFilas - s.Length)
-        posY = numeroAleatorio(0, numColumnas - s.Length)
+        posX = numeroAleatorio(0, numColumnas - s.Length)
+        posY = numeroAleatorio(0, numFilas - s.Length)
         For i = 0 To s.Length - 1
-            matriz(posX + i, posY + i).Text = s(i).ToString()
-            matriz(posX + i, posY + i).BackColor = Color.Aqua
+            insertar(s(i), posX + i, posY + i)
         Next
     End Sub
 
     Public Sub escribirDDI(s As String)
         Dim posX, posY As Integer
-        posX = numeroAleatorio(s.Length - 1, numFilas - 1)
-        posY = numeroAleatorio(s.Length - 1, numColumnas - 1)
+        posX = numeroAleatorio(s.Length - 1, numColumnas - 1)
+        posY = numeroAleatorio(s.Length - 1, numFilas - 1)
         For i = 0 To s.Length - 1
-            matriz(posX - i, posY - i).Text = s(i).ToString()
-            matriz(posX - i, posY - i).BackColor = Color.Aqua
+            insertar(s(i), posX - i, posY - i)
         Next
     End Sub
     Public Sub escribirDI(s As String)
         Dim posX, posY As Integer
-        posX = numeroAleatorio(s.Length - 1, numFilas - 1)
-        posY = numeroAleatorio(0, numColumnas - s.Length)
+        posX = numeroAleatorio(s.Length - 1, numColumnas - 1)
+        posY = numeroAleatorio(0, numFilas - s.Length)
         For i = 0 To s.Length - 1
-            matriz(posX - i, posY + i).Text = s(i).ToString()
-            matriz(posX - i, posY + i).BackColor = Color.Aqua
+            insertar(s(i), posX - i, posY + i)
         Next
     End Sub
     Public Sub escribirDII(s As String)
         Dim posX, posY As Integer
-        posX = numeroAleatorio(0, numFilas - s.Length)
-        posY = numeroAleatorio(s.Length - 1, numColumnas - 1)
+        posX = numeroAleatorio(0, numColumnas - s.Length)
+        posY = numeroAleatorio(s.Length - 1, numFilas - 1)
         For i = 0 To s.Length - 1
-            matriz(posX + i, posY - i).Text = s(i).ToString()
-            matriz(posX + i, posY - i).BackColor = Color.Aqua
+            insertar(s(i), posX + i, posY - i)
         Next
     End Sub
-
+    Public Sub insertar(letrita As String, x As Integer, y As Integer) ' AL LLAMARLO, SE ESPECIFICARÁ :letrita es el s(i)
+        matriz(x, y).Text = letrita.ToString()
+        matriz(x, y).BackColor = Color.Aqua
+    End Sub
 End Class
