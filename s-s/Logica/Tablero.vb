@@ -70,190 +70,161 @@ Public Class Tablero
             Next
             posX += 18
         Next
-
         Return eme
     End Function
-
     Public Function escribirH(s As String) As Boolean
-
-        Dim vector(s.Length) As Label
         Dim posX, posY As Integer
-        posY = numeroAleatorio(0, numFilas - 1)
         posX = numeroAleatorio(0, numColumnas - s.Length)
+        posY = numeroAleatorio(0, numFilas - 1)
         For i = 0 To s.Length - 1
-            If insertar(s(i), posX + i, posY, matriz(posX + i, posY)).Equals(Nothing) Then
+            If (Not esPosible(s(i), posX + i, posY)) Then
                 Return False
-            Else
-                vector(i) = insertar(s(i), posX + i, posY, matriz(posX + i, posY))
             End If
         Next
         For i = 0 To s.Length - 1
-            matriz(posX + i, posY) = vector(i)
-            matriz(posX + i, posY).BackColor = Color.Aqua
+            insertar(s(i), posX + i, posY)
+            matriz(posX + i, posY).BackColor = Color.Aquamarine
         Next
         Return True
     End Function
     Public Function escribirHI(s As String) As Boolean
         Dim posX, posY As Integer
-        Dim vector(s.Length) As Label
-        posY = numeroAleatorio(0, numFilas - 1)
         posX = numeroAleatorio(s.Length - 1, (numColumnas - 1))
+        posY = numeroAleatorio(0, numFilas - 1)
         For i = 0 To s.Length - 1
-            If insertar(s(i), posX - i, posY, matriz(posX - i, posY)).Equals(Nothing) Then
+            If (Not esPosible(s(i), posX - i, posY)) Then
                 Return False
-            Else
-                vector(i) = insertar(s(i), posX - i, posY, matriz(posX - i, posY))
             End If
         Next
         For i = 0 To s.Length - 1
-            matriz(posX - i, posY) = vector(i)
-            matriz(posX - i, posY).BackColor = Color.Aqua
+            insertar(s(i), posX - i, posY)
+            matriz(posX - i, posY).BackColor = Color.Aquamarine
         Next
         Return True
     End Function
-    Public Function escribirV(s As String) As Boolean 'para MODIFICAR
-        Dim vector(s.Length) As Label
+    Public Function escribirV(s As String) As Boolean
         Dim posX, posY As Integer
         posX = numeroAleatorio(0, numColumnas - 1)
         posY = numeroAleatorio(0, numFilas - s.Length)
         For i = 0 To s.Length - 1
-            If insertar(s(i), posX, posY + i, matriz(posX, posY + i)).Equals(Nothing) Then
+            If (Not esPosible(s(i), posX, posY + i)) Then
                 Return False
-            Else
-                vector(i) = insertar(s(i), posX, posY + i, matriz(posX, posY + i))
             End If
         Next
         For i = 0 To s.Length - 1
-            matriz(posX, posY + i) = vector(i)
-            matriz(posX, posY + i).BackColor = Color.Aqua
+            insertar(s(i), posX, posY + i)
+            matriz(posX, posY + i).BackColor = Color.Aquamarine
         Next
         Return True
     End Function
     Public Function escribirVI(s As String) As Boolean
-        Dim vector(s.Length) As Label
         Dim posX, posY As Integer
         posX = numeroAleatorio(0, numColumnas - 1)
-        posY = numeroAleatorio(s.Length, numFilas - s.Length - 1)
+        posY = numeroAleatorio(s.Length - 1, numFilas - 1)
         For i = 0 To s.Length - 1
-            If insertar(s(i), posX, posY - i, matriz(posX, posY - i)).Equals(Nothing) Then
+            If (Not esPosible(s(i), posX, posY - i)) Then
                 Return False
-            Else
-                vector(i) = insertar(s(i), posX, posY - i, matriz(posX, posY - i))
             End If
         Next
         For i = 0 To s.Length - 1
-            matriz(posX, posY - i) = vector(i)
-            matriz(posX, posY - i).BackColor = Color.Aqua
+            insertar(s(i), posX, posY - i)
+            matriz(posX, posY - i).BackColor = Color.Aquamarine
         Next
         Return True
-
     End Function
     Public Function escribirDD(s As String) As Boolean
         Dim posX, posY As Integer
-        Dim vector(s.Length) As Label
         posX = numeroAleatorio(0, numColumnas - s.Length)
         posY = numeroAleatorio(0, numFilas - s.Length)
         For i = 0 To s.Length - 1
-            If insertar(s(i), posX + i, posY + i, matriz(posX + i, posY + i)).Equals(Nothing) Then
+            If (Not esPosible(s(i), posX + i, posY + i)) Then
                 Return False
-            Else
-                vector(i) = insertar(s(i), posX + i, posY + i, matriz(posX + i, posY + i))
             End If
         Next
         For i = 0 To s.Length - 1
-            matriz(posX + i, posY + i) = vector(i)
-            matriz(posX + i, posY + i).BackColor = Color.Aqua
+            insertar(s(i), posX + i, posY + i)
+            matriz(posX + i, posY + i).BackColor = Color.Aquamarine
         Next
         Return True
     End Function
 
     Public Function escribirDDI(s As String) As Boolean
-        Dim vector(s.Length) As Label
         Dim posX, posY As Integer
         posX = numeroAleatorio(s.Length - 1, numColumnas - 1)
         posY = numeroAleatorio(s.Length - 1, numFilas - 1)
         For i = 0 To s.Length - 1
-            If insertar(s(i), posX - i, posY - i, matriz(posX - i, posY - i)).Equals(Nothing) Then
+            If Not esPosible(s(i), posX - i, posY - i) Then
                 Return False
-            Else
-                vector(i) = insertar(s(i), posX - i, posY - i, matriz(posX - i, posY - i))
             End If
         Next
         For i = 0 To s.Length - 1
-            matriz(posX - i, posY - i) = vector(i)
-            matriz(posX - i, posY - i).BackColor = Color.Aqua
+            insertar(s(i), posX - i, posY - i)
+            matriz(posX - i, posY - i).BackColor = Color.Aquamarine
         Next
         Return True
-
     End Function
     Public Function escribirDI(s As String) As Boolean
-        Dim vector(s.Length) As Label
         Dim posX, posY As Integer
         posX = numeroAleatorio(s.Length - 1, numColumnas - 1)
         posY = numeroAleatorio(0, numFilas - s.Length)
         For i = 0 To s.Length - 1
-            If insertar(s(i), posX - i, posY + i, matriz(posX - i, posY + i)).Equals(Nothing) Then
+            If (Not esPosible(s(i), posX - i, posY + i)) Then
                 Return False
-            Else
-                vector(i) = insertar(s(i), posX - i, posY + i, matriz(posX - i, posY + i))
             End If
         Next
         For i = 0 To s.Length - 1
-            matriz(posX - i, posY + i) = vector(i)
-            matriz(posX - i, posY + i).BackColor = Color.Aqua
+            insertar(s(i), posX - i, posY + i)
+            matriz(posX - i, posY + i).BackColor = Color.Aquamarine
         Next
         Return True
     End Function
     Public Function escribirDII(s As String) As Boolean
-        Dim vector(s.Length) As Label
         Dim posX, posY As Integer
         posX = numeroAleatorio(0, numColumnas - s.Length)
         posY = numeroAleatorio(s.Length - 1, numFilas - 1)
-        For i = 0 To s.Length - 1
-            If insertar(s(i), posX + i, posY - i, matriz(posX + i, posY - i)).Equals(Nothing) Then
+        For i = 0 To s.Length
+            If (esPosible(s(i), posX + i, posY - i)) Then
                 Return False
-            Else
-                vector(i) = insertar(s(i), posX + i, posY - i, matriz(posX + i, posY - i))
             End If
         Next
         For i = 0 To s.Length - 1
-            matriz(posX + i, posY - i) = vector(i)
-            matriz(posX + i, posY - i).BackColor = Color.Aqua
+            insertar(s(i), posX + i, posY - i)
+            matriz(posX + i, posY - i).BackColor = Color.Aquamarine
         Next
         Return True
     End Function
     Public Sub escribir(s As String)
-        Dim al As Integer
         Dim bandera As Boolean
         bandera = False
+        Dim aleatorio As Integer
         While bandera = False
-            al = numeroAleatorio(1, 8)
-            If al = 1 Then
+            aleatorio = numeroAleatorio(1, 8)
+            If (aleatorio = 1) Then
                 If escribirH(s) Then
                     bandera = True
                 End If
-            ElseIf al = 2 Then
+            ElseIf (aleatorio = 2) Then
                 If escribirHI(s) Then
                     bandera = True
                 End If
-            ElseIf al = 3 Then
+            ElseIf (aleatorio = 3) Then
                 If escribirV(s) Then
                     bandera = True
                 End If
-            ElseIf al = 4 Then
+            ElseIf (aleatorio = 4) Then
                 If escribirVI(s) Then
                     bandera = True
                 End If
-            ElseIf al = 5 Then
+            ElseIf (aleatorio = 5) Then
                 If escribirDD(s) Then
                     bandera = True
                 End If
-            ElseIf al = 6 Then
+            ElseIf (aleatorio = 6) Then
                 If escribirDDI(s) Then
                     bandera = True
                 End If
-            ElseIf al = 7 Then
-                If escribirDI(s) Then
+            ElseIf (aleatorio = 7) Then
+                If (escribirDI(s)) Then
                     bandera = True
                 End If
             Else
@@ -262,16 +233,11 @@ Public Class Tablero
                 End If
             End If
         End While
-
     End Sub
-    Public Function insertar(letrita As String, x As Integer, y As Integer, e As Label) As Label ' Nos da un label de la matriz con TEXTO
-        If matriz(x, y).BackColor = Color.Aqua Then   'OBJETIVO DE ESTE ALGORITMO : DEVOLVER UN LABEL CON POSICION 
-            e = Nothing
-        Else
-            e.Text = letrita.ToString()
-            ' e.BackColor = Color.Aqua
-        End If
-        Return e
+    Public Sub insertar(letrita As String, x As Integer, y As Integer) ' AL LLAMARLO, SE ESPECIFICARÁ :letrita es el s(i)
+        matriz(x, y).Text = letrita.ToString()
+    End Sub
+    Public Function esPosible(letrita As String, x As Integer, y As Integer) As Boolean
+        Return Not matriz(x, y).BackColor = Color.Aquamarine
     End Function
-
 End Class
