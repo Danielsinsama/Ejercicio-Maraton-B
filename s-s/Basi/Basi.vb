@@ -2,11 +2,11 @@
 Imports System.Reflection.Emit
 Imports System.Windows.Forms
 Imports Label = System.Windows.Forms.Label
-
+Imports System.IO
 Public Module Basi
 
     Public letras As String = "QWERTYUIOPASDFGHJKLÑZCVBNM"
-    Public palabras As String() = {"ALGEBRA", "GEOMETRIA", "HISTORIA", "LITERATURA", "FISICA", "QUIMICA", "BIOLOGIA", "ECONOMIA"}
+    Public palabras As New List(Of String)
     Public Function cadenaAleatoria() As String
         Randomize()
         Dim n As Integer = Rnd() * 25
@@ -19,7 +19,7 @@ Public Module Basi
     End Function
     Public Function mayorLongitud()
         Dim mayor As Integer
-        For i = 0 To palabras.Length - 1
+        For i = 0 To palabras.Count - 1
             If i = 0 Then
                 mayor = palabras(i).Length - 1
             Else
