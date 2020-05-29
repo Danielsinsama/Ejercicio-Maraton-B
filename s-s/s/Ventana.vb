@@ -7,7 +7,7 @@ Public Class Ventana
         'predecir longitud
         container.Location = New System.Drawing.Point(20, 20)
 
-        Dim t = New Tablero(mayorLongitud() * 3, mayorLongitud() * 3, container)
+        Dim t = New Tablero(mayorLongitud() * 2, mayorLongitud() * 2, container)
 
         ' Dim t = New Tablero(10, 10, container)
 

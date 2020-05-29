@@ -44,7 +44,7 @@ Public Class Tablero
         ele.BorderStyle = BorderStyle.FixedSingle
         ele.Text = cadena
         ele.Margin = New Padding(0, 0, 0, 0)
-        ele.Size = New Size(18, 19) 'PUEDE ESTAR MAL, CAMBIAR SI LO ESTÁ
+        ele.Size = New Size(18, 19)
         ele.Location = New System.Drawing.Point(x, y)
 
         Return ele
@@ -55,7 +55,6 @@ Public Class Tablero
         Dim posX As Integer
         Dim posY As Integer
         For i = 0 To filas
-            'VA DEL CERO AL CINCO-> ES DECIR LONGITUD DE 6
             If i = 0 Then
                 posX = 20 + container.Location.X
             End If
@@ -238,6 +237,6 @@ Public Class Tablero
         matriz(x, y).Text = letrita.ToString()
     End Sub
     Public Function esPosible(letrita As String, x As Integer, y As Integer) As Boolean
-        Return Not matriz(x, y).BackColor = Color.Aquamarine
+        Return (Not matriz(x, y).BackColor = Color.Aquamarine) Or (matriz(x, y).BackColor = Color.Aquamarine And matriz(x, y).Text = letrita)
     End Function
 End Class
