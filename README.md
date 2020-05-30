@@ -1,4 +1,4 @@
-# Generador d sopa de letras
+# Generador de sopa de letras
 El programa genera sopas de letras a partir de un archivo de texto(se adapta a la cantidad de palabras).
 
 ### El repositorio
