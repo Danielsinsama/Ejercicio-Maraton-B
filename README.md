@@ -1,5 +1,5 @@
 # Generador de sopa de letras
-El programa genera sopas de letras a partir de un archivo de texto(se adapta a la cantidad de palabras).
+El programa genera sopas de letras a partir de un archivo de texto(se adapta a la cantidad de palabras y a su longitud).
 <p align="left">
   <img src="https://github.com/Danielsinsama/Ejercicio-Maraton-B/blob/master/sreenshot.png" width="1000" height="500"/>
 </p>
