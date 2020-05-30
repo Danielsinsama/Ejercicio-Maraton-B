@@ -14,7 +14,7 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 
 #### Pre-requisitos 📋
 
-_Que cosas necesitas para instalar el software y como instalarlas_
+_Que cosas necesitas para instalar el software_
 
 ```
 .Microsoft Visual Studio Installer Projects: https://marketplace.visualstudio.com/items?itemName=visualstudioclient.MicrosoftVisualStudio2017InstallerProjects
