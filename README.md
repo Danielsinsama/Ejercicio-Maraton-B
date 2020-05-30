@@ -1,6 +1,6 @@
 # Generador de sopa de letras
 El programa genera sopas de letras a partir de un archivo de texto(se adapta a la cantidad de palabras).
-https://raw.githubusercontent.com/Danielsinsama/Ejercicio-Maraton-B/master/screenshot.png
+https://github.com/Danielsinsama/Ejercicio-Maraton-B/blob/master/sreenshot.png
 ### El repositorio
 El título de este repositorio es porque en un concurso de programación en el que participé con mis compañeros, al finalizar, el profesor que fue jurado nos entregó una separata con ejercicios para resolverlos cuando tengamos tiempo ♥.
 Así que este es uno de ellos, y tal vez suba los demás.
