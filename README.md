@@ -3,6 +3,7 @@ El programa genera sopas de letras a partir de un archivo de texto(se adapta a l
 <p align="left">
   <img src="https://github.com/Danielsinsama/Ejercicio-Maraton-B/blob/master/sreenshot.png" width="1000" height="500"/>
 </p>
+
 ### El repositorio
 El título de este repositorio es porque en un concurso de programación en el que participé con mis compañeros, al finalizar, el profesor que fue jurado nos entregó una separata con ejercicios para resolverlos cuando tengamos tiempo ♥.
 Así que este es uno de ellos, y tal vez suba los demás.
