@@ -1,0 +1,6 @@
+Generar un diagrama de sopa de letras de forma aleatoria.
+Las palabras deben ser obtenidas de un archivo de texto.
+Debe adaptarse al tamaño y al número de palabras del archivo de texto.
+Debe generar letras en cualquier sentido.
+Permitir el cruce y la reutilización de letras.
+Permite varios modos de impresion(solo las palabras de la sopa de letras y la sopa de letras ofuscada)
