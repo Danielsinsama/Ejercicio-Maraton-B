@@ -13,16 +13,14 @@ Así que este es uno de ellos, y tal vez suba los demás.
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
 #### Pre-requisitos 📋
-
-_Que cosas necesitas para instalar el software_
-
-```
-.Microsoft Visual Studio Installer Projects: https://marketplace.visualstudio.com/items?itemName=visualstudioclient.MicrosoftVisualStudio2017InstallerProjects
-.NET Framework 3.5 (si tienes Windows 7 en adelante no tendrás  problemas ♥)
-```
-```
-Compilar y ver el setup en tu explorador de archivos.
-```
+- Que tu PC corra de  Windows 7 en adelante.
+- Instalar la última versión de [Visual Studio](https://developer.microsoft.com/en-us/windows/downloads) (es suficiente con Visual Studio Community).
+  - Instalar la carga de trabajo "Desarrollo de escritorio .NET".
+  -Escribir en git:
+    ```
+    git clone https://github.com/Danielsinsama/Ejercicio-Maraton-B.git
+    ```
+  - Abrir (s-s.sln) en Visual Studio para compilar y ejecutar ♥.
 ## Autores ✒️
 
 _Subo esto para fomentar su interés por el razonamiento y la lógica al programar(es la finalidad de estos ejercicios)_
