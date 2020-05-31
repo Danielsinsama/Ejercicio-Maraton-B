@@ -16,7 +16,7 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 - Que tu PC corra de  Windows 7 en adelante.
 - Instalar la última versión de [Visual Studio](https://developer.microsoft.com/en-us/windows/downloads) (es suficiente con Visual Studio Community).
   - Instalar la carga de trabajo "Desarrollo de escritorio .NET".
-  -Escribir en git:
+  - Escribir en git:
     ```
     git clone https://github.com/Danielsinsama/Ejercicio-Maraton-B.git
     ```
