@@ -8,7 +8,7 @@ El programa genera sopas de letras a partir de un archivo de texto(se adapta a l
 El título de este repositorio es porque en un concurso de programación en el que participé con mis compañeros, al finalizar, el profesor que fue jurado nos entregó una separata con ejercicios para resolverlos cuando tengamos tiempo ♥.
 Así que este es uno de ellos, y tal vez suba los demás.
 
-## Comenzando :octocat:
+## Comenzando :evergreen_tree:
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
